@@ -2,10 +2,10 @@ library mapbox_polyline_points;
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-enum TravelType { driving, cycling, traffic, walking }
+enum TravelType { driving, cycling, walking }
 
 class MapboxpolylinePoints {
-  static const String STATUS_OK = "ok";
+  static const String statusok = "ok";
 
   ///Get the encoded string from google directions api
   ///
@@ -30,7 +30,7 @@ class MapboxpolylinePoints {
     if (response.statusCode == 200) {
       var parsedJson = json.decode(response.body);
       result.status = parsedJson["code"];
-      if (parsedJson["code"]?.toLowerCase() == STATUS_OK &&
+      if (parsedJson["code"]?.toLowerCase() == statusok &&
           parsedJson["routes"] != null &&
           parsedJson["routes"].isNotEmpty) {
         for (var i = 0; i < parsedJson["routes"].length; i++) {
