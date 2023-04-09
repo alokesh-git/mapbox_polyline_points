@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'pointLatLng.dart';
+import 'point_lat_lng.dart';
 import '../src/utils/request_enums.dart';
 import 'utils/polyline_result.dart';
 
@@ -29,7 +29,7 @@ class NetworkUtil {
     if (response.statusCode == 200) {
       var parsedJson = json.decode(response.body);
       result.status = parsedJson["code"];
-      if (parsedJson["status"]?.toLowerCase() == statusok &&
+      if (parsedJson["code"]?.toLowerCase() == statusok &&
           parsedJson["routes"] != null &&
           parsedJson["routes"].isNotEmpty) {
              for (var i = 0; i < parsedJson["routes"].length; i++) {
