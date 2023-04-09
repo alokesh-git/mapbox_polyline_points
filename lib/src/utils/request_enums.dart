@@ -1,0 +1,1 @@
+enum TravelType { driving, cycling, traffic, walking }
