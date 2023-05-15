@@ -34,6 +34,8 @@ class MapboxpolylinePoints {
           parsedJson["routes"] != null &&
           parsedJson["routes"].isNotEmpty) {
         for (var i = 0; i < parsedJson["routes"].length; i++) {
+          result.duration.add(parsedJson["routes"][i]["duration"]);
+          result.distance.add(parsedJson["routes"][i]["distance"]);
           result.points.add(decodeEncodedPolyline(
               parsedJson["routes"][i]["geometry"]["coordinates"]));
         }
@@ -75,7 +77,8 @@ class MapboxPolylineResult {
   ///
   /// returns OK if the api call is successful
   String? status;
-
+  List<double> duration = [];
+  List<double> distance = [];
   /// list of decoded points
   List<List<PointLatLng>> points = [];
 

@@ -334,6 +334,25 @@ _addPolyLine() {
               ));
   }
 }
+
+
+// also you can add distance and durations and result is a instance of MapboxPolylineResult
+
+double distance = (result.distance[0].floor()) / 1000;
+print(distance);
+
+ double seconds = result.distance[0];
+  
+  // Convert the seconds to a Duration object
+  Duration duration = Duration(seconds: seconds.toInt());
+  
+  // Extract the hours, minutes, and remaining seconds from the Duration
+  int hours = duration.inHours;
+  int minutes = duration.inMinutes.remainder(60);
+  int remainingSeconds = duration.inSeconds.remainder(60);
+  
+  // Print the result
+  print('$hours hours $minutes minutes $remainingSeconds seconds');
 ```
 
 ## Hint

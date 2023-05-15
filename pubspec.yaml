@@ -1,6 +1,6 @@
 name: mapbox_polyline_points
 description: A Flutter package that allow you to access mapbox direction api into google map.
-version: 0.0.4
+version: 0.0.5
 homepage: https://github.com/alokesh-git/mapbox_polyline_points
 
 environment:
